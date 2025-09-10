@@ -1,0 +1,24 @@
+UNF
+TrPenjualan = NamaPembeli + KodePembeli + AlamatPembeli + No.Penjualan + Tanggal + Pembayaran + @KodePembayaran + {KodeBarang + NamaBarang + Qty + Satuan + Harga + Jumlah + Total + Bayar + Sisa + Kembali } + Bagian + NamaKaryawan + KodeKaryawan + NamaPelanggan
+
+1NF
+TrPenjualan = NamaPembeli + @KodePembeli + AlamatPembeli + @No.Penjualan + Tanggal + Pembayaran + @KodePembayaran + @KodeBarang + NamaBarang + Qty + Satuan + Harga + Jumlah + Bayar + @kodeBagian + Bagian + @KodeKaryawan + NamaKaryawan + alamatkaryawan + notelpKaryawan+ NamaPelanggan.
+
+2NF
+TrHeaderPenjualan = NamaPembeli + @KodePembeli + AlamatPembeli + @No.Penjualan + Tanggal + Pembayaran + @KodePembayaran + @kodeBagian +@KodeKaryawan + NamaKaryawan + NamaPelanggan.
+TrDetailPenjualan = @No.Penjualan + @KodeBarang + Qty + Jumlah + Bayar
+MsBarang = @KodeBarang + NamaBarang + Satuan + Harga + Qty
+
+
+3NF
+TrHeaderPenjualan = @No.Penjualan + Tanggal + #KodePembeli + #KodePembayaran + #KodeKaryawan
+TrDetailPenjualan = @No.Penjualan + #KodeBarang + Qty + Jumlah + Bayar
+MsBarang = @KodeBarang + NamaBarang + Satuan + Harga + Qty
+MsPembeli = @KodePembeli + AlamatPembeli + NamaPembeli + TipPembeli + NamaPelanggan.
+MsPembayaran = @KodePembayaran + Pembayaran
+MsKaryawan = @KodeKaryawan + NamaKaryawan + AlamatKaryawan + TlpKaryawan + #KodeBagian
+MsBagian = @KodeBagian + Bagian
+
+
+
+
